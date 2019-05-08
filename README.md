@@ -10,7 +10,7 @@ Provided as well is a example .tex implementation of the class, which should be 
 
 ### Prerequisites
 
-All that's needed to use this project is a working LaTeX enviroment. If some packages cause errors please update your environment to it's newest version or change to one that is being maintained.
+All that's needed to use this project is a working LaTeX environment. If some packages cause errors please update your environment to it's newest version or change to one that is being maintained.
 
 ## Built With
 
