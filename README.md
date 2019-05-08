@@ -29,5 +29,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 * **Billie Thompson** - For the always lovely ReadMe template - [PurpleBooth](https://github.com/PurpleBooth)
-* **vel@latextemplates.com** - For the initial inspiration and a very handy class file to start working from - (https://www.latextemplates.com/template/developer-cv)
+* **jan@vorisek.me and vel@latextemplates.com** - For the initial inspiration and a very handy class file to start working from - (https://www.latextemplates.com/template/developer-cv)
 
