@@ -40,7 +40,7 @@
 }
 
 
-% desc: creates title of the CV
+% desc: Creates title of the CV
 % args: #1 []optional title for applicant
 % args: #2 Name of applicant
 \renewcommand{\title}[2][]{	
@@ -56,10 +56,10 @@
 }
 
 
-% desc: creates icon with surrounding black box and text with an optional link
-% args: #1 []optional link for text
+% desc: Creates icon with surrounding black box and text with an optional link
+% args: #1 []optional Link for text
 % args: #2 FontAwesome Icon name, IDs can be found in package README.pdf
-% args: #3 text accompanying the icon
+% args: #3 Text accompanying the icon
 \newcommand{\info}[3][]{
 	\vcenteredhbox{
 		\colorbox{black}{
@@ -77,10 +77,8 @@
 }
 
 
-% desc: creates icon with surrounding black box and text with an optional link
-% args: #1 []optional link for text
-% args: #2 FontAwesome Icon name, IDs can be found in package README.pdf
-% args: #3 text accompanying the icon
+% desc: Creates address icon and aligns and formats address text
+% args: #1 Address with line seperators
 \newcommand{\address}[1]{
 	\vcenteredhbox{
 		\colorbox{black}{
@@ -97,7 +95,8 @@
 	\newline
 }
 
-
+% desc: Formats section title
+% args: #1 section Name
 \renewcommand{\section}[1]{
 	\bfseries
 	\Large
@@ -107,6 +106,11 @@
 	\normalfont
 }
 
+% desc: Adds and formats a subsection for describing an activity the applicant has done
+% args: #1 []optional Time period of the activity
+% args: #2 Job Title, Education level, etc.
+% args: #3 Location of the activity
+% args: #4 Description and details
 \renewcommand{\subsection}[4][]{
 	#1
     \hskip4mm
