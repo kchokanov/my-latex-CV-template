@@ -4,6 +4,7 @@
 \ProvidesClass{CVClass}				% Class name
 \LoadClass{article}					% Base class to build on top of
 
+
 \usepackage[hidelinks]{hyperref}	% Required for links but hide the default boxes around links
 \usepackage{moresize} 				% Provides more font size commands (\HUGE and \ssmall)
 \usepackage{fontawesome}			% Required for FontAwesome icons
@@ -18,8 +19,9 @@
 \usepackage{tikz}					% Required for creating squares in the background
 \usepackage{enumitem}				% Used to remove indentatation
 
+
 \setlength{\parindent}{0mm} 		% Suppress paragraph indentation
-\pagestyle{empty}					% No headers or footers
+\pagestyle{empty} 					% No headers or footers
 \usetikzlibrary{shapes, backgrounds}
 \tikzset{x=1cm, y=1cm}				% Default tikz units
 \geometry{
@@ -144,9 +146,36 @@
 	\vskip0.5mm
 }
 
+
 % desc: Fortmats a skill entry for the skills sections
 % args: #1 Skill
 \newcommand{\skill}[1]{
 	#1
 	\vskip0.5mm
 }
+
+% desc: Creates reference section
+% args: #1 Content of section
+\newcommand{\refsection}[1]{
+	\vskip4mm
+	\rule{\textwidth}{0.2mm}
+	\bfseries
+	\large 
+	\underline{REFERENCES}
+	\vskip1mm
+	#1
+}
+
+% desc: Adds formatted reference
+% args: #1 Name of reference
+% args: #2 Profession or association
+% args: #3 Contact Information
+\newcommand{\refentry}[3]{
+	\small
+	\normalfont
+	\itshape
+	#1 - #2
+	\normalfont
+	| #3\\
+}
+
