@@ -16,6 +16,7 @@
 \usepackage{lipsum}					% For adding filler text
 \usepackage{ifthen}					% For if statements
 \usepackage{tikz}					% Required for creating squares in the background
+\usepackage{enumitem}				% Used to remove indentatation
 
 \setlength{\parindent}{0mm} 		% Suppress paragraph indentation
 \pagestyle{empty}					% No headers or footers
@@ -95,8 +96,9 @@
 	\newline
 }
 
+
 % desc: Formats section title
-% args: #1 section Name
+% args: #1 Section name
 \renewcommand{\section}[1]{
 	\bfseries
 	\Large
@@ -106,19 +108,45 @@
 	\normalfont
 }
 
+
 % desc: Adds and formats a subsection for describing an activity the applicant has done
 % args: #1 []optional Time period of the activity
 % args: #2 Job Title, Education level, etc.
 % args: #3 Location of the activity
 % args: #4 Description and details
 \renewcommand{\subsection}[4][]{
-	#1
-    \hskip4mm
+	\parbox[t]{0.2\textwidth}{
+		#1
+	}
+    \hfill
     \parbox[t]{0.8\textwidth}{
-		\bfseries #2
+		\bfseries#2
 		\hfill
 		#3\\
 		\normalfont
 		#4
     }
+}
+
+
+% desc: Fortmats a Language entry for the skills sections
+% args: #1 []optional Proficiency
+% args: #2 Language, be it programming or other
+\newcommand{\lang}[2][]{
+	\begin{minipage}[t]{0.25\textwidth}
+		\bfseries
+		#2
+		
+	\end{minipage}
+	\begin{minipage}[t]{0.30\textwidth}
+		#1
+	\end{minipage}
+	\vskip0.5mm
+}
+
+% desc: Fortmats a skill entry for the skills sections
+% args: #1 Skill
+\newcommand{\skill}[1]{
+	#1
+	\vskip0.5mm
 }
