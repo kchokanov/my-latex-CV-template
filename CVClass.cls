@@ -1,4 +1,4 @@
- % Thanks to Jan Vorisek (jan@vorisek.me) and Vel from latextemlates.com for the basis for this class (https://www.latextemplates.com/template/developer-cv)
+ % Thanks to Jan Vorisek (jan@vorisek.me) and Vel from latextemlates.com for the basis of this class and some of the code (https://www.latextemplates.com/template/developer-cv)
 
 \NeedsTeXFormat{LaTeX2e}			% Required version of LaTeX
 \ProvidesClass{CVClass}				% Class name
@@ -11,6 +11,7 @@
 \usepackage[utf8]{inputenc}			% Required for inputting international characters
 \usepackage[T1]{fontenc}			% Output font encoding for international characters
 \usepackage[default]{raleway}		% Font package
+\usepackage[none]{hyphenat}			% Removes hyphens, does not work with babel
 \usepackage{xcolor}					% For changing text color
 \usepackage{lipsum}					% For adding filler text
 \usepackage{ifthen}					% For if statements
@@ -33,13 +34,13 @@
 % desc: Command to vertically centre adjacent content
 % args: Content to be aligned
 \newcommand{\vcenteredhbox}[1]{
-	\begingroup%
-		\setbox0=\hbox{#1}\parbox{\wd0}{\box0}%
-	\endgroup%
+	\begingroup
+		\setbox0=\hbox{#1}\parbox{\wd0}{\box0}
+	\endgroup
 }
 
 
-% desc: creates title of CV
+% desc: creates title of the CV
 % args: #1 []optional title for applicant
 % args: #2 Name of applicant
 \renewcommand{\title}[2][]{	
@@ -53,6 +54,7 @@
 	\normalfont#1
 	\vspace{15mm}
 }
+
 
 % desc: creates icon with surrounding black box and text with an optional link
 % args: #1 []optional link for text
@@ -72,4 +74,47 @@
 	\vcenteredhbox{\href{#1}{\small#3}}
 	\vspace{1mm}
 	\newline
+}
+
+
+% desc: creates icon with surrounding black box and text with an optional link
+% args: #1 []optional link for text
+% args: #2 FontAwesome Icon name, IDs can be found in package README.pdf
+% args: #3 text accompanying the icon
+\newcommand{\address}[1]{
+	\vcenteredhbox{
+		\colorbox{black}{
+			\makebox(6, 10){	%TODO - round edges of boxes
+				\textcolor{white}{
+					\large\csname faMapMarker\endcsname
+				}
+			}
+		}
+	}
+	\hskip1mm
+	\parbox[t]{4cm}{\small#1}
+	\vspace{1mm}
+	\newline
+}
+
+
+\renewcommand{\section}[1]{
+	\bfseries
+	\Large
+	\underline{#1}
+	\small
+	\vskip1mm
+	\normalfont
+}
+
+\renewcommand{\subsection}[4][]{
+	#1
+    \hskip4mm
+    \parbox[t]{0.8\textwidth}{
+		\bfseries #2
+		\hfill
+		#3\\
+		\normalfont
+		#4
+    }
 }
