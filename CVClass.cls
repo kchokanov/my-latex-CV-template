@@ -106,10 +106,9 @@
 	\bfseries
 	\Large
 	\underline{#1}
-	\small
 	\vskip2mm
-	\normalfont
 	\normalsize
+	\normalfont
 	#2
 }
 
@@ -118,18 +117,31 @@
 % args: #1 []optional Time period of the activity
 % args: #2 Job Title, Education level, etc. and Location
 % args: #3 Description and details
-\renewcommand{\subsection}[3][]{
-	\parbox[t]{0.2\textwidth}{
-		#1
+\renewcommand{\subsection}[5][]{
+	\parbox[t]{0.17\textwidth}{
+		\raggedleft
+		#2
+		\hskip1mm
 	}
     \hfill
-    \parbox[t]{0.8\textwidth}{
+    \parbox[t]{0.83\textwidth}{
 		\raggedright
-		\bfseries#2
+		\bfseries
+		\href{#1}{#3}
+		\\
+		\href{#1}{#4}
 		\newline
 		\normalfont
-		#3
+		#5
     }
+}
+
+\newcommand{\subsecbullet}[1]{
+	\\
+	$\bullet$\,
+	\parbox[t]{0.8\textwidth}{
+		#1
+	}
 }
 
 
