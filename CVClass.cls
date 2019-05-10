@@ -99,34 +99,36 @@
 }
 
 
-% desc: Formats section title
+% desc: Creates section title
 % args: #1 Section name
-\renewcommand{\section}[1]{
+% args: #2 Section content
+\renewcommand{\section}[2]{
 	\bfseries
 	\Large
 	\underline{#1}
 	\small
-	\vskip1mm
+	\vskip2mm
 	\normalfont
+	\normalsize
+	#2
 }
 
 
 % desc: Adds and formats a subsection for describing an activity the applicant has done
 % args: #1 []optional Time period of the activity
-% args: #2 Job Title, Education level, etc.
-% args: #3 Location of the activity
-% args: #4 Description and details
-\renewcommand{\subsection}[4][]{
+% args: #2 Job Title, Education level, etc. and Location
+% args: #3 Description and details
+\renewcommand{\subsection}[3][]{
 	\parbox[t]{0.2\textwidth}{
 		#1
 	}
     \hfill
     \parbox[t]{0.8\textwidth}{
+		\raggedright
 		\bfseries#2
-		\hfill
-		#3\\
+		\newline
 		\normalfont
-		#4
+		#3
     }
 }
 
@@ -157,7 +159,7 @@
 % desc: Creates reference section
 % args: #1 Content of section
 \newcommand{\refsection}[1]{
-	\vskip4mm
+	\vskip3mm
 	\rule{\textwidth}{0.2mm}
 	\bfseries
 	\large 
@@ -167,15 +169,19 @@
 }
 
 % desc: Adds formatted reference
-% args: #1 Name of reference
-% args: #2 Profession or association
-% args: #3 Contact Information
-\newcommand{\refentry}[3]{
+% args: #1 []optional link
+% args: #2 Name of reference
+% args: #3 Profession or association
+% args: #4 Contact Information
+\newcommand{\refentry}[4][]{
+	\href{#1}{
 	\small
 	\normalfont
 	\itshape
-	#1 - #2
+	#2 - #3
 	\normalfont
-	| #3\\
+	| #4
+	}
+	\vskip0.2mm
 }
 
